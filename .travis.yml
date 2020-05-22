@@ -4,6 +4,7 @@ services:
   - docker
 before_install:
   - openssl aes-256-cbc -K $encrypted_1b050925b83c_key -iv $encrypted_1b050925b83c_iv -in multi-k8s-278008-6748c672d002.json.enc -out multi-k8s-278008-6748c672d002.json -d
+  - export CLOUDSDK_CORE_DISABLE_PROMPTS=1
   - curl https://sdk.cloud.google.com | bash > /dev/null;
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gcloud update components kubectl
